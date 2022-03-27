@@ -6,9 +6,9 @@
     <meta charset="utf-8">
 
     {% if title %}
-        <title>Django Gallery {{title}}</title>
+        <title> Gallery {{title}}</title>
     {% else %}
-    <title> Django Gallery </title>
+    <title>  Gallery </title>
     {% endif %}
 
 
@@ -21,9 +21,10 @@
 <body>
     {% block content%}
     {% include "navbar.html" %}
+    {% endblock %}
 
-    {% block content %} <h1 class='text-center'>Django Gallery</h1> 
-    
+    {% block scripts %}
+    {% bootstrap_javascript %}
     {% endblock %}
 
 </body>
