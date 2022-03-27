@@ -18,13 +18,11 @@ def search(request):
         category = request.GET.get('image')
         searchname= Image.search_by_category(category)
         message = f"{category}"
-
         return render(request, 'search.html',{"message":message, "image":searchname})
-
     else:
-        
         return render(request, 'search.html')
-    
+
+
 def image(request, image_id):
     try:
         image = Image.objects.get(id=image_id)
@@ -47,7 +45,8 @@ def category(request, category_id):
         categories = Category.objects.all()
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "categories": categories})
-    
+
+
 def location(request, location_id):
     try:
         location = Location.objects.get(id=location_id)
