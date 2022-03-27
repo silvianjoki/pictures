@@ -44,7 +44,7 @@ def category(request):
         title = category.name
         return render(request, 'search.html',{"title":title, "message":message,"images": images})
     except ObjectDoesNotExist:
-        message = "NO ITEMS UNDER CATEGORY " + search.upper()
+        message = "NO ITEMS UNDER CATEGORY " 
         categories = Category.objects.all()
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "categories": categories})

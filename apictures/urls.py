@@ -8,7 +8,7 @@ from . import views
 urlpatterns=[
     re_path('^$',views.home,name = 'home'),
     re_path('^search/', views.search, name='search'),
-    path('^image/<int:image_id>', views.image, name='image'),
+    re_path('^image/<int:image_id>', views.image, name='image'),
     # re_path('^image/(?P<image_id>\d+)',views.image,name ='image'),
     re_path('^category/',views.category,name ='category'),
     re_path('^location/',views.location,name ='location'),

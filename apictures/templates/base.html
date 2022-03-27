@@ -22,6 +22,14 @@
 <body>
     {% block content%}
     {% include "navbar.html" %}
+
+    {% for image in image %}
+    <div class="col-sm-4">
+        <img src="{{img.image_pic.url}}" class="card" style="width: 400px; height: 290px;">
+        {{img.description}}
+    </div>
+    {% endfor %}
+
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -35,7 +43,8 @@
                 <a id="img-link" style="cursor: zoom-in;"><img alt="image" class="mod-img"></a>
                 <div class="details-content">
                     <div class="img-share" onclick="share()">
-                        <a id="share" class="share-icon"><i class="fa-solid fa-square-share-nodes"></i>></i></a>
+                        <a id="share" class="share-icon"></i></a>
+                        
                     </div>
                     <a id="img-cat" class="badge badge-secondary"></a>
                     <div class="details-meta">
