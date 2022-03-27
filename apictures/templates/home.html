@@ -1,1 +1,19 @@
-<h1>seganyon</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+{{block.super}}
+
+
+
+
+    <p> 2022 Copyright: <a href="https://github.com/silvianjoki" target="_blank">Silvia</a></p>
+</div>
+{% endblock %}
