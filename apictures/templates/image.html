@@ -8,7 +8,7 @@
             <h3>{{image.name}}</h3>
             <img
             onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
-            class="image img-thumbnail" id= {{image.name}} src="{{image.photo.url}}">
+            class="image img-thumbnail" id='{{image.name}}' src="{{image.photo.url}}">
             {% else %}
             <div class="message text-center" style="margin-top: 5rem;">
                 <img src="{% static 'images/not-found.png' %}" alt="not-found" style="width:15%; height: 15%;">
