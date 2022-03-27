@@ -1,4 +1,8 @@
 # pictures
+
+<!-- <img src="./static/images/landing.png"
+     alt="landing"
+     style="width=100%;" /> -->
 Pictures- a Django based personal gallery
 
 ## Description
