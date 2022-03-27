@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
+<div class="container-fluid" style="height:600px">
+
+    <div class="row">
+        {% if image%}
+        {% else %}
+        <h2> Arrgh we couldn't find that Category</h2>
+        </h2>
+        {% endif %}
+    </div>
+
+    <div class="row">
+        {% if image %}
+        {% for image in image %}
+        <div class="col-sm-4">
+            <img src="{{img.image_pic.url}}" class="card" style="width: 400px; height: 290px;">
+            {{img.description}}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+
+
+{% block content %}
+{{block.super}}
