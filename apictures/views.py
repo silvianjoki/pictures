@@ -36,22 +36,22 @@ def image(request, image_id):
     return render(request, 'image.html', {"image":image})
 
 
-def category(request):
+def category(request, category_id):
     try:
-        category = Category.objects.get()
+        category = Category.objects.get(id = category_id)
         images = Image.search_image(category)
         message = category.name
         title = category.name
         return render(request, 'search.html',{"title":title, "message":message,"images": images})
     except ObjectDoesNotExist:
-        message = "NO ITEMS UNDER CATEGORY " 
+        message = "NO ITEMS UNDER CATEGORY " + search.upper()
         categories = Category.objects.all()
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "categories": categories})
 
-def location(request):
+def location(request, location_id):
     try:
-        location = Location.objects.get()
+        location = Location.objects.get(id=location_id)
         images = Image.filter_by_location(location)
         message = location.name
         title = location.name
