@@ -28,7 +28,7 @@ def search(request):
 def image(request, image_id):
     try:
         image = Image.objects.get(id=image_id)
-        print(image.category.id)
+        # print(image.category.id)
     except ObjectDoesNotExist:
         
         message = "Image does not exist or may have been deleted!"
