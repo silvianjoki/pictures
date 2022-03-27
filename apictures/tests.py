@@ -111,4 +111,22 @@ class CategoryTest(TestCase):
         update = Category.objects.get(name = "travel")
         self.assertEqual(update.name, 'travel')
 
+class ImageTest(TestCase):
 
+
+    def setUp(self):
+        '''create location and save '''
+        self.nairobi= Location(name="Nairobi")
+        self.nairobi.save_location()
+
+        '''create category and save'''
+        self.love= Category(name="Love")
+        self.love.save_category()
+
+        self.new_image= Image(name="Cutre", description="Something cutre", image="Add image", location=self.nairobi, category= self.love )
+        self.new_image.save_image()
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
