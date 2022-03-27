@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Category, Image, Location
+from django.core.exceptions import ObjectDoesNotExist
+
 
 # Create your views here.
 def home(request):
@@ -27,7 +29,8 @@ def image(request, image_id):
     try:
         image = Image.objects.get(id=image_id)
         print(image.category.id)
-    except :
+    except ObjectDoesNotExist:
+        
         message = "Image does not exist or may have been deleted!"
         return render(request, 'image.html', {"message":message})
     return render(request, 'image.html', {"image":image})
@@ -40,12 +43,11 @@ def category(request, category_id):
         message = category.name
         title = category.name
         return render(request, 'search.html',{"title":title, "message":message,"images": images})
-    except :
+    except ObjectDoesNotExist:
         message = "NO ITEMS UNDER CATEGORY " + search.upper()
         categories = Category.objects.all()
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "categories": categories})
-
 
 def location(request, location_id):
     try:
@@ -54,7 +56,7 @@ def location(request, location_id):
         message = location.name
         title = location.name
         return render(request, 'search.html',{"title":title, "message":message,"images": images})
-    except :
+    except ObjectDoesNotExist:
         message = "NO ITEMS FOR THAT LOCATION"
         locations = Location.objects.all()
         title= "Not Found"
