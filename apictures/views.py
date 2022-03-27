@@ -9,10 +9,10 @@ def home(request):
 
 def home(request):
     images = Image.objects.all()
-    print(images[0].category)
+    # print(images[0].category)
     locations = Location.objects.all()
     categories = Category.objects.all()
-    return render(request, 'home.html', {"locations": locations,"categories": categories})
+    return render(request, 'home.html', {'images':images,  "locations": locations,"categories": categories})
 
 
 def search(request):
@@ -36,9 +36,9 @@ def image(request, image_id):
     return render(request, 'image.html', {"image":image})
 
 
-def category(request, category_id):
+def category(request):
     try:
-        category = Category.objects.get(id = category_id)
+        category = Category.objects.get()
         images = Image.search_image(category)
         message = category.name
         title = category.name
@@ -49,9 +49,9 @@ def category(request, category_id):
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "categories": categories})
 
-def location(request, location_id):
+def location(request):
     try:
-        location = Location.objects.get(id=location_id)
+        location = Location.objects.get()
         images = Image.filter_by_location(location)
         message = location.name
         title = location.name
