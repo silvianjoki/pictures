@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a href="{% url 'home' %}" class="nav-item is-active" active-color="purple" style= 'font-size:2rem; padding-right:4%; color:purple;'  id="brand">Gallery</a>
+        <a href="{% url 'home' %}" class="nav-item is-active" active-color="purple" style= 'font-size:2rem; padding-right:4%; color:black;'  id="brand">Gallery</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,7 +8,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 
 
-                <li class="nav-item dropdown">
+                {% comment %} <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style= 'padding-right:20%;' id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Location
                     </a>
@@ -17,11 +17,11 @@
                         <a class="dropdown-item" href="{% url 'location' name=locations.name %}"><p>{{locations.name}}</p></a>
                         {% endfor %}
                     </div>
-                </li>
+                </li> {% endcomment %}
 
                 <li class="nav-item">
 
-                    <a href="/admin" style= 'padding-left: 50%;' class="nav-item" active-color="rebeccapurple">&nbsp;Admin</a>
+                    <a href="/admin" style= 'font-size:1rem; padding-left:40px; color:black;' class="nav-item" active-color="rebeccapurple">&nbsp;Admin</a>
                 </li>
 
             </ul>
