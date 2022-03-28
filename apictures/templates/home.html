@@ -34,7 +34,18 @@
     </div>
     {% comment %} {% endfor %} {% endcomment %}
 
-
+    {% if categories %}
+    <h3>Here are some other categories you can check out:</h3>
+    {% for category in categories %}
+    <a href="/category/{{category.id}}"  style="margin-left: 1%;">#{{category.name}}</a>
+    {% endfor %}
+    {% endif %}
+    {% if locations %}
+    <h3>Here are some other locations you can check out:</h3>
+    {% for location in locations %}
+    <a href="/location/{{location.id}}" style="margin-left: 1%;">{{location.name}}</a>
+    {% endfor %}
+    {% endif %} {% endcomment %}
 
     <div class='footer'>
         <p> 2022 Copyright: <a href="https://github.com/silvianjoki" target="_blank">Silvia</a></p>
