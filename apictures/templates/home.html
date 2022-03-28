@@ -11,30 +11,96 @@
 {% block content %}
 {{block.super}}
 
-<div class="modal fade" id="previewPictureModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+<div class="container-fluid ">
+    <h1> Review awesome pictures in landscape, work, and love </h1>
+</div>
+
+
+<div class="container-fluid p-4 home " style="height: 700px;">
+    <div class="row">
+        {% for photos in image %}
+        <div class="col-md-4 mt-3 img">
+        
+        <a href="{% url 'imagedetails' photos.id %}"><img src="{{photos.image_pic.url}}" class="card" alt="..."
+            style="width: 400px; height: 290px;"></a>
         </div>
-        <div class="modal-body" id='modal-body'>
-            Show a second modal and hide this one with the button below.
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
-        </div>
-        </div>
+        {% empty %}
+        <h3>Image is not available</h3>
+        {% endfor %}
     </div>
 </div>
+    <div class='footer'>
+        <p> 2022 Copyright: <a href="https://github.com/silvianjoki" target="_blank">Silvia</a></p>
+    </div>
 
-<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
 
-
-
-
-    <p> 2022 Copyright: <a href="https://github.com/silvianjoki" target="_blank">Silvia</a></p>
-</div>
 {% endblock %}
+
+
+
+
+
+{% comment %} <div class= 'content'>
+    {% comment %} {% if image%  }
+    {% for images of image %} {% endcomment %}
+    {% comment %} <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">{{image.name}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>{{ show.name }}</h1>
+                <img src="{{ show.image_url }}" alt="show image">
+                    <div>{{ show.blurb }}</div>
+                <script>
+                    var myModalEl = document.getElementById('showModal');
+                    var modal = bootstrap.Modal.getInstance(myModalEl);
+                    modal.toggle();
+                </script>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    {% comment %} {% endfor %}
+    {% endif %} {% endcomment %}
+
+
+
+    {% comment %} <div class="col-md-5 col-sm-6">
+        {% if locations %}
+        <h3>Locations</h3>
+        {% for location in locations %}
+        <a href="/location/{{location.id}}" class="badge badge-secondary" style="margin-left: 1%;"><i
+            class="fas fa-map-marker-alt"></i>&nbsp;{{location.name}}</a>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-md-5 col-sm-6">
+        {% if categories %}
+        <h3>Categories</h3>
+        {% for category in categories %}
+        <a href="/category/{{category.id}}" class="badge badge-secondary"
+            style="margin-left: 1%;">#{{category.name}}</a>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-md-1"></div>
+    </div>
+</div> {% endcomment %}
+
+{% comment %} <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a> {% endcomment %} 
+
+
+
+
+
+
+
 
 

@@ -1,3 +1,5 @@
+
+
 const indicator = document.querySelector('.nav-indicator');
 const items = document.querySelectorAll('.nav-item');
 
@@ -20,6 +22,10 @@ function showModal(image_id,name,description,url,location,location_id,category,c
         $("#img-pos").text(posted)
         $("#copy-url").val(window.location.origin + "/image/" + image_id)
 }
+
+
+var myModalEl = document.querySelector('#myModal')
+var modal = bootstrap.Modal.getOrCreateInstance(myModalEl) // Returns a Bootstrap modal instance
 
 function share(){
     $("#copy-url").select()
