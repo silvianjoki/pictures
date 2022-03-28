@@ -1,0 +1,12 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100vw;
+    height: 5rem;
+    min-height: 5rem !important;
+    padding: 0 10px;
+    border: 0 !important;
+    background-color: #fff;
+    box-shadow: 0 0 1.8rem rgba(0, 0, 0, .15);
+}
