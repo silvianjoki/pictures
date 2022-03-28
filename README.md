@@ -1,6 +1,6 @@
 # pictures
 
-<img src="./media/images/Screenshot 2022-03-28 at 11.15.44.png" 
+<img src="./media/images/Screenshot 2022-03-28 at 11.50.09.png" 
      alt="landing"
      style="width=100%;" />
 Pictures- a Django based personal gallery
