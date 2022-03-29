@@ -14,14 +14,14 @@
 .content{
     background-color: rgb(201, 236, 236);
     background-position: cover;
-    height: 850px;
+    height: 100px;
     align-items: center;
     padding-left: 10%;
 }
 
-.container{
+.content .container{
     text-align: center;
-    padding-top: 15%;
+    padding-top: 4%;
     height: 300px;
 
 }
