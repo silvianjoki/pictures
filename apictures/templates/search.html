@@ -14,6 +14,7 @@
 
     <div class="row">
         {% if image%}
+        
         {% else %}
         <h2> Arrgh we couldn't find the{{message}} Category</h2>
         </h2>
@@ -22,29 +23,34 @@
 
     <div class="row">
         {% if image %}
-        {% for image in image %}
+        {% for image in images %}
         <div class="col-sm-4">
-            <img src="{{img.image_pic.url}}" class="card" style="width: 400px; height: 290px;">
-            {{img.description}}
+            <div class="card" style="width: 21rem;">
+                <img src="{{image.image_picture.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{image.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Location: {{image.location}} </h6>
+                    <p class="card-text"> {{image.description}} </p>
+                    <p class="card-text">Date: {{image.post_date}} </p>
+                    <p class="card-text">Category: {{image.category}} </p>
+                </div>
+            </div>
         </div>
         {% endfor %}
         {% endif %}
     </div>
-
-    {% comment %} {% if categories %}
-    <h3>Here are some other categories you can check out:</h3>
-    {% for category in categories %}
-    <a href="/category/{{category.id}}"  style="margin-left: 1%;">#{{category.name}}</a>
-    {% endfor %}
-    {% endif %}
-    {% if locations %}
-    <h3>Here are some other locations you can check out:</h3>
-    {% for location in locations %}
-    <a href="/location/{{location.id}}" style="margin-left: 1%;">{{location.name}}</a>
-    {% endfor %}
-    {% endif %} {% endcomment %}
-
 </div>
 
-
 {% endblock %}
+
+{% comment %} {% if categories %}
+{% for category in categories %}
+<a href="/category/{{category.id}}"  style="margin-left: 1%;">#{{category.name}}</a>
+{% endfor %}
+{% endif %}
+{% if locations %}
+<h3>Here are some other locations you can check out:</h3>
+{% for location in locations %}
+<a href="/location/{{location.id}}" style="margin-left: 1%;">{{location.name}}</a>
+{% endfor %}
+{% endif %}  {% endcomment %}

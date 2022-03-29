@@ -7,23 +7,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 
-
-                {% comment %} <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style= 'padding-right:20%;' id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Location
-                    </a>
-                    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                        {% for locations in location %}
-                        <a class="dropdown-item" href="{% url 'location' name=locations.name %}"><p>{{locations.name}}</p></a>
-                        {% endfor %}
-                    </div>
-                </li> {% endcomment %}
-
                 <li class="nav-item">
-
                     <a href="/admin" style= 'font-size:1rem; padding-left:40px; color:black;' class="nav-item" active-color="rebeccapurple">&nbsp;Admin</a>
                 </li>
-
             </ul>
             <form class="d-flex" role='search' action="{% url 'search' %}" >
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

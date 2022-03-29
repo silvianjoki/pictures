@@ -12,55 +12,31 @@
 
 {{block.super}}
 
-<div class='content'>
-    <div class="container ">
-        <h1> Review awesome pictures in landscape, work, and love </h1>
-    </div>
 
-    {% if categories %}
-    <h3>Here are some other categories you can check out:</h3>
-    {% for category in categories %}
-    <a href="/category/{{category.id}}"  style="margin-left: 1%;">#{{category.name}}</a>
-    {% endfor %}
-    {% endif %}
-    {% if locations %}
-    <h3>Here are some other locations you can check out::</h3>
-    {% for location in locations %}
-    <a href="/location/{{location.id}}" style="margin-left: 1%;">{{location.name}}</a>
-    {% endfor %}
-    {% endif %} 
-</div>
 
-{% comment %} <div class='container'>
-    {% if images %}
-    {% for image in images %}
+<div class='container'>
     <div class="row">
-        <div class="col-sm-6">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <img src="{{image.image_picture.url}}" class="card" style="width: 400px; height: 290px;">
+    {% for image in images %}
+        <div class="col-sm-4">
+            <div class="card" style="width: 21rem;">
+                <img src="{{image.image_picture.url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Name:{{image.name}}</h5>
+                    <h5 class="card-title">{{image.name}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Location: {{image.location}} </h6>
-                    <p class="card-text">Description: {{image.description}} </p>
-                    <a href="#" class="card-link">Date:{{image.post_date}}</a>
-                    <a href="#" class="card-link">Category:{{image.category}}</a>
+                    <p class="card-text"> {{image.description}} </p>
+                    <p class="card-text">Date: {{image.post_date}} </p>
+                    <p class="card-text">Category: {{image.category}} </p>
                 </div>
             </div>
         </div>
-    </div>
     {% endfor %}
-    {% endif %}
-</div>  {% endcomment %}
+    </div>
+</div> 
 
 
-<div class='footer'>
+{% comment %} <div class='footer'>
     <p> 2022 Copyright: <a href="https://github.com/silvianjoki" target="_blank">Silvia</a></p>
-</div>
-
-
-
-
+</div> {% endcomment %}
 
 
 {% endblock %}
