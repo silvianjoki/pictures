@@ -40,7 +40,7 @@ STATICFILES_DIRS = (
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-import os
+
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
