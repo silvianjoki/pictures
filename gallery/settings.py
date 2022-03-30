@@ -40,7 +40,7 @@ STATICFILES_DIRS = (
 
 
 MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY='django-insecure-m@7&8_7k5_xcj8dgmsuhp!f-oz7@khds#-1bq#&&x91@dd5#x_'
 DEBUG = config('DEBUG', default=False, cast=bool)
 # development
 if config('MODE')=="dev":
